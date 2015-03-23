@@ -329,8 +329,8 @@ public:
       if (it->updateNeeded())
       {
         transform.header.stamp = ros::Time::now();
-        transform.header.frame_id = it->getTargetFrame();
-        transform.child_frame_id = it->getSourceFrame();
+        transform.header.frame_id = "robot1/" + it->getTargetFrame();
+        transform.child_frame_id = "robot1/" + it->getSourceFrame();
 
         // notify tf_subscription that a network transmission has been triggered
         it->transmissionTriggered();
